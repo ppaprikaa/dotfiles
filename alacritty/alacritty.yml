@@ -1,0 +1,9 @@
+window:
+  padding:
+    x: 15
+    y: 15
+font:
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Regular
+  size: 12.5
