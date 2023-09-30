@@ -1,3 +1,6 @@
+require("paprika.theme")
+local vim = vim
+
 vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -19,4 +22,5 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.g.mapleader = " "
 
-vim.cmd("colorscheme kanagawa-dragon")
+-- Winter is coming, so dawn comes late and sunset quite early
+SetThemeBasedOnDayTime { sunriseHour = 8, sunsetHour = 15, utcDelta = 6 }

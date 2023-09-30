@@ -3,7 +3,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-	
 	-- Fuzzy finder!
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.3',
@@ -12,6 +11,8 @@ return require('packer').startup(function(use)
 
 	-- Colorschemes:
 	use "rebelot/kanagawa.nvim"
+   use ({ 'projekt0n/github-nvim-theme' })
+   use 'Mofiqul/vscode.nvim'
 
 	-- Treesitter
 	use ('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -82,4 +83,14 @@ return require('packer').startup(function(use)
          "MunifTanjim/nui.nvim",
       }
    }
+
+   -- source code analysis and navigation | navigator.lua
+   use({
+      'ray-x/navigator.lua',
+      requires = {
+         { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+         { 'neovim/nvim-lspconfig' },
+      },
+   })
+
 end)
